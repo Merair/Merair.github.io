@@ -1,68 +1,205 @@
 /* all use */
-@font-face{
+
+@font-face {
     font-family: zi;
     src: url(../fonts/zi.OTF);
 }
-html,body{
-    color: #FFFFFF;
+
+@font-face {
+    font-family: 汉仪长美黑简;
+    src: url(../fonts/汉仪长美黑简.TTF);
+}
+
+@font-face {
+    font-family: 汉仪魏碑简;
+    src: url(../fonts/汉仪魏碑简.TTF);
+}
+
+html,
+body {
+    color: #333333;
     font-family: zi;
     user-select: none;
 }
-a{
+
+a,
+a:visited {
     color: #FFFFFF;
 }
-.inner{
+
+a:hover,
+a:active {
+    color: rgb(255, 196, 0);
+    text-decoration: none;
+}
+
+.inner {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
-.bg{
+
+.bg {
     position: fixed;
     width: 100%;
     height: 100vh;
     background: url(../images/2.jpg);
     z-index: -1;
 }
+
 /* header */
-header{
+
+header {
     width: 100%;
     height: 5rem;
     background: rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(235, 192, 52,0.5); 
+    color: #ffffff;
+    border-bottom: 1px solid rgba(235, 192, 52, 0.5);
 }
-.imgOut{
+
+.imgOut {
     height: 3rem;
-    display: inline-block;
     padding: 1rem;
+    float: left;
 }
-.logo{
+
+.logo {
     height: 3rem;
     line-height: 5rem;
 }
+
+header>.inner>a {
+    margin: 1rem 0.5rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    float: left;
+    text-decoration: none;
+}
+
+header>.inner>a:hover,
+a:active {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+nav {
+    float: right;
+    margin: 1rem 0;
+}
+
+nav li {
+    float: left;
+    margin: 0 0 0 1rem;
+    line-height: 3rem;
+}
+
 /* center */
-section{
+
+section {
     margin-top: 2rem;
     overflow: hidden;
 }
-.content-top{
-    margin-top: 5rem;
-}
-.content-top li{
-    background: #FFFFFF;
-}
+
 /* center content */
-article{
+
+article {
     float: left;
     width: 78%;
-    background: rgba(255, 255, 255, 0.1); 
-}
-/* center aside */
-aside{
-    width: 20%;
     background: rgba(255, 255, 255, 0.1);
-    float: right;
 }
-aside h2{
+
+mark {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 1rem 2rem;
+    background: rgb(255, 196, 0);
+    display: inline-block;
+    box-shadow: 5px 5px #000000;
+}
+
+.content-top {
+    margin: 2rem 0;
+}
+
+.content-top li {
+    background: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    padding: 1rem;
+    margin: 1rem 2rem 0 2rem;
+    position: relative;
+}
+
+.content-top li a {
+    color: #000000;
+}
+
+.content-top li a h1 {
+    text-shadow: 0.2rem 0.1rem #adadad;
+}
+
+.content-top li a:hover h1 {
+    color: rgb(255, 196, 0);
+    text-decoration: none;
+}
+
+.content-top li:hover {
+    background: #ffffff;
+}
+
+.content-top li img {
+    width: 20%;
+    height: 80%;
+    float: left;
+}
+
+.tip-content {
+    width: 78%;
+    float: left;
+    margin-left: 1rem;
+    overflow: hidden;
+}
+
+.tip-content>h1 {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.tip-content p {
+    margin: 1rem 0;
+    line-height: 1.5rem;
+    color: #666666;
+}
+
+.tip-list {
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+    color: #666666;
+}
+
+.tip-list span {
+    padding-left: 1rem;
+}
+
+.tip-list span i {
+    margin: 0.5rem;
+}
+
+/* center aside */
+
+aside {
+    width: 20%;
+    float: right;
+    color: #FFFFFF;
+}
+
+.aside-block {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+aside h2 {
     color: black;
     margin: 1rem;
     height: 4rem;
@@ -76,15 +213,91 @@ aside h2{
     border: 10px dotted #ffffff;
     overflow: hidden;
 }
-aside ul li{
+
+aside ul li {
     margin: 1rem 0;
     text-align: center;
 }
+
+.messageBord {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    background: rgb(10, 29, 19);
+    text-align: center;
+    font-family: 汉仪长美黑简;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    border: 0.3rem double rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.messageBord span {
+    font-size: 1.3rem;
+    display: block;
+    margin: 0 0 0.6rem 0;
+    color:  rgb(255, 196, 0);
+    text-shadow: 0 5px  #000000;
+}
+
+/* a:hover::before, a:hover::after { position: absolute; }   */
+
+/* a:hover::before { content: "\5B"; left: -20px; }   */
+
+/* a:hover::after { content: "\5D"; right:  -20px; }   */
+
+ul.aside-block {
+    position: relative;
+}
+
+ul.aside-block a {
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 0.5rem;
+}
+
+ul.aside-block a:hover::before,
+a:hover::after {
+    position: absolute;
+    animation: 0ms;
+}
+
+ul.aside-block a:hover::before {
+    content: "\5B";
+    left: 60px;
+    animation: moveLeft 1s infinite;
+}
+
+ul.aside-block a:hover::after {
+    content: "\5D";
+    right: 60px;
+    animation: moveRight 1s infinite;
+}
+
+
+@keyframes moveLeft {
+    from {
+        left: 30px;
+    }
+    to {
+        left: 70px;
+    }
+}
+@keyframes moveRight {
+    from {
+        right: 30px;
+    }
+    to {
+        right: 70px;
+    }
+}
+
 /* footer */
-/* footer{
+
+footer {
     width: 100%;
     height: 12rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
-    background:  rgba(0, 0, 0, 0.5);
-} */
+    margin: 2rem 0 0 0;
+    background: rgba(0, 0, 0, 0.5);
+}
