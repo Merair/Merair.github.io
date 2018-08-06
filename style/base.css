@@ -5,16 +5,6 @@
     src: url(../fonts/zi.OTF);
 }
 
-@font-face {
-    font-family: 汉仪长美黑简;
-    src: url(../fonts/汉仪长美黑简.TTF);
-}
-
-@font-face {
-    font-family: 汉仪魏碑简;
-    src: url(../fonts/汉仪魏碑简.TTF);
-}
-
 html,
 body {
     color: #333333;
@@ -43,7 +33,7 @@ a:active {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: url(../images/2.jpg);
+    background: url(../images/bg/9.jpg);
     z-index: -1;
 }
 
@@ -106,6 +96,7 @@ article {
     float: left;
     width: 78%;
     background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
 }
 
 mark {
@@ -117,11 +108,11 @@ mark {
     box-shadow: 5px 5px #000000;
 }
 
-.content-top {
-    margin: 2rem 0;
+.content-main {
+    margin: 1rem 0 2rem 0;
 }
 
-.content-top li {
+.content-main li {
     background: rgba(255, 255, 255, 0.7);
     overflow: hidden;
     padding: 1rem;
@@ -129,45 +120,62 @@ mark {
     position: relative;
 }
 
-.content-top li a {
+.content-main li a {
+    display: block;
+    width: 100%;
+    height: 100%;
     color: #000000;
-}
-
-.content-top li a h1 {
-    text-shadow: 0.2rem 0.1rem #adadad;
-}
-
-.content-top li a:hover h1 {
-    color: rgb(255, 196, 0);
     text-decoration: none;
 }
 
-.content-top li:hover {
-    background: #ffffff;
-}
-
-.content-top li img {
-    width: 20%;
-    height: 80%;
-    float: left;
-}
-
-.tip-content {
-    width: 78%;
-    float: left;
-    margin-left: 1rem;
-    overflow: hidden;
-}
-
-.tip-content>h1 {
+.content-main li a h1 {
     margin: 1rem 0;
     font-size: 1.6rem;
     font-weight: bold;
+    background: url(../images/icon.png) no-repeat;
+    background-size: 1.6rem;
+    padding-left: 2.2rem;
+}
+
+.content-main li a hr {
+    margin: 1rem 0;
+    color: #f6f7f6c9;
+}
+
+.content-main li:hover h1 {
+    color: rgb(252, 193, 0);
+    text-decoration: none;
+    text-shadow: 0.15rem 0.15rem #130f02;
+}
+
+.content-main li:hover {
+    background: #ffffff;
+}
+
+.content-img {
+    width: 18rem;
+    height: 12rem;
+    float: left;
+    background: url(../images/bg/3.jpg) center;
+    background-size: cover;
+}
+
+.content-img img {
+    width: 18rem;
+    min-height: 12rem;
+}
+
+.tip-content {
+    width: 71.4%;
+    float: left;
+    margin-left: 1rem;
+    overflow: hidden;
+    font-size: 1.2rem;
 }
 
 .tip-content p {
     margin: 1rem 0;
-    line-height: 1.5rem;
+    line-height: 2.0rem;
     color: #666666;
 }
 
@@ -180,10 +188,27 @@ mark {
 
 .tip-list span {
     padding-left: 1rem;
+    line-height: 2.5rem;
 }
 
 .tip-list span i {
     margin: 0.5rem;
+}
+
+.content-tag {
+    position: absolute;
+    left: 20rem;
+    bottom: 2.2rem;
+    color: #126135;
+    z-index: 100;
+}
+
+.content-tag span {
+    margin-right: 2rem;
+}
+
+.tag-sp {
+    color: #126135
 }
 
 /* center aside */
@@ -196,15 +221,25 @@ aside {
 
 .aside-block {
     padding: 1rem;
+    margin: 0 0 2rem 0px;
     background: rgba(255, 255, 255, 0.1);
 }
 
 aside h2 {
+    height: 4rem;
+    font-size: 1.3rem;
+    line-height: 3rem;
+}
+
+aside hr {
+    margin: 0 0 0.5rem 0;
+}
+
+aside h2.aside-welcome {
     color: black;
     margin: 1rem;
-    height: 4rem;
-    line-height: 4rem;
     padding: 1rem;
+    line-height: 4rem;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -235,15 +270,9 @@ aside ul li {
     font-size: 1.3rem;
     display: block;
     margin: 0 0 0.6rem 0;
-    color:  rgb(255, 196, 0);
-    text-shadow: 0 5px  #000000;
+    color: rgb(255, 196, 0);
+    text-shadow: 0 5px #000000;
 }
-
-/* a:hover::before, a:hover::after { position: absolute; }   */
-
-/* a:hover::before { content: "\5B"; left: -20px; }   */
-
-/* a:hover::after { content: "\5D"; right:  -20px; }   */
 
 ul.aside-block {
     position: relative;
@@ -273,7 +302,6 @@ ul.aside-block a:hover::after {
     animation: moveRight 1s infinite;
 }
 
-
 @keyframes moveLeft {
     from {
         left: 30px;
@@ -282,12 +310,47 @@ ul.aside-block a:hover::after {
         left: 70px;
     }
 }
+
 @keyframes moveRight {
     from {
         right: 30px;
     }
     to {
         right: 70px;
+    }
+}
+
+.aside-tag {
+    word-break: keep-all;
+}
+
+.aside-tag a {
+    line-height: 2rem;
+    margin-right: 1.5rem;
+}
+
+.aside-hot li {
+    line-height: 2rem;
+    width: 16.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding-left: 1.5rem;
+    background: url(../images/icon1.png) no-repeat left center;
+    background-size: 1rem;
+}
+
+.aside-hot li:hover {
+    animation: rock 0.25s 2;
+}
+
+@keyframes rock {
+    from {
+        transform: rotate(7deg);
+    }
+    to {
+        transform: rotate(-7deg);
     }
 }
 
